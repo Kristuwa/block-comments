@@ -46,29 +46,30 @@
       <h2 class="callback__title">Отправить комментарий</h2>
       <form class="callback-form">
         <label class="callback-form__label">
-			<span class="callback-form__title-label">Имя</span>
+          <span class="callback-form__title-label">Имя</span>
           <input
             type="text"
             name="name"
             placeholder="Введите имя"
             class="callback-form__input"
-				pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Имя может содержать только буквы, апостроф, тире и пробелы."
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Имя может содержать только буквы, апостроф, тире и пробелы."
             required
           />
         </label>
         <label class="callback-form__label">
-			<span class="callback-form__title-label">Комментарий</span>
-			<textarea
-			  class="callback-form__textarea"
-			  name="comment"
-			  rows="5"
-			  placeholder="Введите текст..."
-			></textarea>
-		 </label>
-		 <label class="callback-form__label">
-			<span class="callback-form__title-label">Введите дату</span>
-		 <input type="date" id="start" name="date"></label>
+          <span class="callback-form__title-label">Комментарий</span>
+          <textarea
+            class="callback-form__textarea"
+            name="comment"
+            rows="5"
+            placeholder="Введите текст..."
+          ></textarea>
+        </label>
+        <label class="callback-form__label">
+          <span class="callback-form__title-label">Введите дату</span>
+          <input type="date" id="start" name="date"
+        /></label>
         <button type="submit" class="callback-form__button">Отправить</button>
       </form>
     </div>
