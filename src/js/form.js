@@ -9,27 +9,30 @@ let formData = {};
 
 function onFormSubmit(e) {
   e.preventDefault();
+
   const formDataResults = new FormData(e.currentTarget);
+
   formDataResults.forEach((value, name) => {
     formData[name] = value;
   });
+
   addToHTML(formData);
+
   form.reset();
 }
 
 function markupComment({ name, comment, date }) {
-  return `<li class="section-cases__item"><p class="section-cases__name">${name}</p><div class="section-cases__text-content"><p class="section-cases__comment">${comment}</p></div><p class="section-cases__date">${date}</p><button type="button" class='section-cases__btn-close btn' aria-label="close">[x]<svg
-  width="20"
-  height="20"
- >
-  <use href="./src/images/icons.svg#icon-bin" class="close-btn"></use>
-</svg></button>
+  return `<li class="section-cases__item">
+  <p class="section-cases__name">${name}</p>
+ 
+  <div class="section-cases__text-content"><p class="section-cases__comment">${comment}</p></div>
+  <p class="section-cases__date">${date}</p>
+  <button type="button" class='section-cases__btn-close btn' aria-label="close"><img src="./images/bin.svg" width="32" height="32" alt="bin"></button>
 <button type="button" class='section-cases__btn-like btn' aria-label="like"><span class="count">0</span><svg
-width="20"
-height="20"
->
-<use href="./src/images/icons.svg#icon-heart" class="like-btn"></use>
-</svg></button></li>`;
+width="32" height="32" class="like-btn">
+<use xlink:href="./images/icons.svg#icon-heart"></use>
+</svg></button>
+</li>`;
 }
 
 function addToHTML(data) {
