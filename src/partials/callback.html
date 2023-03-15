@@ -1,0 +1,76 @@
+<section class="callback">
+  <div class="container">
+    <h2 class="visually-hidden">Форма для комментариев</h2>
+    <div class="callback__img">
+      <picture>
+        <source
+          srcset="
+            ./images/callback-desk.jpg    1x,
+            ./images/callback-desk@2x.jpg 2x
+          "
+          type="image/jpg"
+          media="(min-width: 1360px)"
+          width="680"
+          height="460"
+        />
+
+        <source
+          srcset="
+            ./images/callback-tablet.jpg    1x,
+            ./images/callback-tablet@2x.jpg 2x
+          "
+          type="image/jpg"
+          media="(min-width: 768px)"
+          width="384"
+          height="349"
+        />
+
+        <source
+          srcset="./images/callback-mob.jpg 1x, ./images/callback-mob@2x.jpg 2x"
+          type="image/jpg"
+          media="(min-width: 320px)"
+          width="320"
+          height="220"
+        />
+
+        <img
+          src="./images/callback-mob.jpg"
+          alt="men with coffee"
+          width="320"
+          height="220"
+        />
+      </picture>
+    </div>
+
+    <div class="callback__container">
+      <h2 class="callback__title">Отправить комментарий</h2>
+      <form class="callback-form">
+        <label class="callback-form__label">
+			<span class="callback-form__title-label">Имя</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Введите имя"
+            class="callback-form__input"
+				pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Имя может содержать только буквы, апостроф, тире и пробелы."
+            required
+          />
+        </label>
+        <label class="callback-form__label">
+			<span class="callback-form__title-label">Комментарий</span>
+			<textarea
+			  class="callback-form__textarea"
+			  name="comment"
+			  rows="5"
+			  placeholder="Введите текст..."
+			></textarea>
+		 </label>
+		 <label class="callback-form__label">
+			<span class="callback-form__title-label">Введите дату</span>
+		 <input type="date" id="start" name="date"></label>
+        <button type="submit" class="callback-form__button">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
