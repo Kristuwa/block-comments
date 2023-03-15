@@ -14,6 +14,7 @@ function onFormSubmit(e) {
     formData[name] = value;
   });
   addToHTML(formData);
+  form.reset();
 }
 
 function markupComment({ name, comment, date }) {
@@ -21,13 +22,13 @@ function markupComment({ name, comment, date }) {
   width="20"
   height="20"
  >
-  <use href="./images/icons.svg#icon-bin" class="close-btn"></use>
+  <use href="./src/images/icons.svg#icon-bin" class="close-btn"></use>
 </svg></button>
 <button type="button" class='section-cases__btn-like btn' aria-label="like"><span class="count">0</span><svg
 width="20"
 height="20"
 >
-<use href="./images/icons.svg#icon-heart" class="like-btn"></use>
+<use href="./src/images/icons.svg#icon-heart" class="like-btn"></use>
 </svg></button></li>`;
 }
 
