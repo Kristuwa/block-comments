@@ -1,11 +1,13 @@
 let form = document.querySelector('.callback-form');
 let listComments = document.querySelector('.section-cases__list');
 let inputDateForm = document.querySelector('#start');
+let textareaInput = document.querySelector('.callback-form__textarea');
 
 form.addEventListener('submit', onFormSubmit);
 listComments.addEventListener('click', onCloseBtn);
 listComments.addEventListener('click', onLikeBtn);
 inputDateForm.addEventListener('input', onInputDate);
+textareaInput.addEventListener('input', onInputTextarea);
 
 let formData = {};
 
@@ -36,10 +38,7 @@ function markupComment({ name, comment, date }) {
   <div class="section-cases__text-content"><p class="section-cases__comment">${comment}</p></div>
   <p class="section-cases__date">${date}</p>
   <button type="button" class='section-cases__btn-close btn' aria-label="close"></button>
-<button type="button" class='section-cases__btn-like btn' aria-label="like"><span class="count">0</span><span><svg
-width="32" height="32" class="like-btn">
-<use href="./images/icons.svg#icon-heart"></use>
-</svg></span></button>
+<button type="button" class='section-cases__btn-like btn' aria-label="like"><span class="count">0</span></button>
 </li>`;
 }
 
@@ -134,5 +133,11 @@ function changeDateForComment() {
     formData.date = `вчера, ${hours}:${minutes}`;
   } else {
     formData.date = `${day}.${month}.${year}, ${hours}:${minutes}`;
+  }
+}
+
+function onInputTextarea(e) {
+  if (e.target.value.length === 280) {
+    alert('Вы ввели максимальное количество символов');
   }
 }
