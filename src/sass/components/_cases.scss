@@ -101,37 +101,36 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  padding: 3px;
   padding: 0;
   border: none;
+  color: #3c3939;
   background-color: transparent;
 
-  transition: border 250ms linear;
+  transition: color 250ms linear;
 }
 
 .btn:hover,
 .btn:focus {
-  border: 1px solid #a1a1a1;
+  color: #000000;
+}
+
+.btn:hover .icon-heart,
+.btn:hover .icon-bin,
+.btn:focus .icon-heart,
+.btn:focus .icon-bin {
+  fill: currentColor;
 }
 
 .section-cases__btn-close {
   position: absolute;
   top: 0;
   right: 10px;
-  background-image: url(../images/bin.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .section-cases__btn-like {
   position: absolute;
   top: 0;
   right: 50px;
-  background-image: url(../images/heart.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .count {
@@ -148,4 +147,10 @@
   font-size: 10px;
   line-height: 1.6;
   z-index: 4;
+}
+
+.icon-heart,
+.icon-bin {
+  fill: currentColor;
+  stroke: currentColor;
 }

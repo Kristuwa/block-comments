@@ -37,25 +37,37 @@ function markupComment({ name, comment, date }) {
  
   <div class="section-cases__text-content"><p class="section-cases__comment">${comment}</p></div>
   <p class="section-cases__date">${date}</p>
-  <button type="button" class='section-cases__btn-close btn' aria-label="close"></button>
-<button type="button" class='section-cases__btn-like btn' aria-label="like"><span class="count">0</span></button>
+  <button type="button" class='section-cases__btn-close btn' aria-label="close">
+  <svg class="icon-bin" width="20" height="20"><use xlink:href="#icon-bin"><symbol id="icon-bin" viewBox="0 0 32 32">
+  <path d="M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18 4h-4v-2h4v2z"></path>
+  </symbol></use></svg></button>
+<button type="button" class='section-cases__btn-like btn' aria-label="like">
+<span class="count">0</span>
+<svg class="icon-heart" width="20" height="20"><use xlink:href="#icon-heart">
+<symbol id="icon-heart" viewBox="0 0 32 32">
+<path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
+</symbol></use></svg></button>
 </li>`;
 }
 
 function onCloseBtn(e) {
-  if (e.target.nodeName !== 'BUTTON') {
+  const buttonClose = e.target.closest('button');
+  if (!buttonClose) {
+    console.log(e.target);
     return;
   }
-  if (e.target.closest('button').className === 'section-cases__btn-close btn') {
+  if (buttonClose.className === 'section-cases__btn-close btn') {
     e.target.closest('li').style.display = 'none';
   }
 }
 
 function onLikeBtn(e) {
-  if (e.target.nodeName !== 'BUTTON') {
+  const buttonLike = e.target.closest('button');
+  if (!buttonLike) {
+    console.log(e.target);
     return;
   }
-  if (e.target.closest('button').className === 'section-cases__btn-like btn') {
+  if (buttonLike.className === 'section-cases__btn-like btn') {
     let counter = e.target.querySelector('.count');
 
     counter.classList.toggle('add');
