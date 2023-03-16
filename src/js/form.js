@@ -68,7 +68,7 @@ function onLikeBtn(e) {
     return;
   }
   if (buttonLike.className === 'section-cases__btn-like btn') {
-    let counter = e.target.querySelector('.count');
+    let counter = buttonLike.querySelector('.count');
 
     counter.classList.toggle('add');
 
